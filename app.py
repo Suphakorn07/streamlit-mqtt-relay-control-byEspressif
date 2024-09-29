@@ -3,20 +3,36 @@ import paho.mqtt.client as mqtt
 
 # MQTT broker configuration
 mqtt_broker = "test.mosquitto.org"
-topic_publish = "/topic/wpan"
+mqtt_port = 8080  # ใช้พอร์ต 8080 สำหรับ WebSocket
+mqtt_topic = "/topic/wpan"
 
-# Create MQTT client
-client = mqtt.Client()
-client.connect(mqtt_broker, 1883, 60)
+# สร้าง MQTT client และตั้งค่า WebSocket
+client = mqtt.Client(transport="websockets")
+client.connect(mqtt_broker, mqtt_port, 60)
 
-# Streamlit app configuration
+
+
+
+# ฟังก์ชันสำหรับส่งคำสั่งควบคุมรีเลย์
+def control_relay(action):
+    if action == "on":
+        client.publish(mqtt_topic, "on")
+        st.success("Relay turned ON")
+    elif action == "off":
+        client.publish(mqtt_topic, "off")
+        st.success("Relay turned OFF")
+    else:
+        st.error("Invalid action")
+
+# ส่วนของ Streamlit app
 st.title("Relay Control Dashboard")
 
-# Control relay buttons
+# ปุ่มควบคุมรีเลย์
 if st.button('Turn ON Relay'):
-    client.publish(topic_publish, "on")
-    st.success("Relay turned ON")
+    control_relay("on")
 
 if st.button('Turn OFF Relay'):
-    client.publish(topic_publish, "off")
-    st.success("Relay turned OFF")
+    control_relay("off")
+
+# ฟังก์ชัน callback เมื่อได้รับข้อความ MQTT
+
