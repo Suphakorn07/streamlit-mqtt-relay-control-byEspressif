@@ -1,0 +1,73 @@
+[1/5] cmd.exe /C "cd /D "C:\Users\User HP\Documents\Project_WPAN\mqtt_ws\build\esp-idf\esptool_py" && C:\Espressif\python_env\idf5.2_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.2.2/components/partition_table/check_sizes.py --offset 0x8000 partition --type app "C:/Users/User HP/Documents/Project_WPAN/mqtt_ws/build/partition_table/partition-table.bin" "C:/Users/User HP/Documents/Project_WPAN/mqtt_ws/build/app-template.bin""
+app-template.bin binary size 0xe8a50 bytes. Smallest app partition is 0x100000 bytes. 0x175b0 bytes (9%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D "C:\Users\User HP\Documents\Project_WPAN\mqtt_ws\build\bootloader\esp-idf\esptool_py" && C:\Espressif\python_env\idf5.2_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.2.2/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 "C:/Users/User HP/Documents/Project_WPAN/mqtt_ws/build/bootloader/bootloader.bin""
+Bootloader binary size 0x54b0 bytes. 0x2b50 bytes (34%) free.
+[2/3] cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.2.2\components\esptool_py && C:\Espressif\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=C:/Espressif/frameworks/esp-idf-v5.2.2 -D SERIAL_TOOL=C:/Espressif/python_env/idf5.2_py3.11_env/Scripts/python.exe;;C:/Espressif/frameworks/esp-idf-v5.2.2/components/esptool_py/esptool/esptool.py;--chip;esp32c6 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D "WORKING_DIRECTORY=C:/Users/User HP/Documents/Projecesptool.py --chip esp32c6 -p COM7 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 2MB 0x0 bootloader/bootloader.bin 0x10000 app-template.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.7.0
+Serial port COM7
+Connecting....
+Chip is ESP32-C6 (QFN40) (revision v0.0)
+Features: WiFi 6, BT 5, IEEE802.15.4
+Crystal is 40MHz
+MAC: 40:4c:ca:ff:fe:57:4c:ac
+BASE MAC: 40:4c:ca:57:4c:ac
+MAC_EXT: ff:fe
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x000f8fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 21680 bytes to 13075...
+Writing at 0x00000000... (100 %)
+Wrote 21680 bytes (13075 compressed) at 0x00000000 in 0.5 seconds (effective 332.0 kbit/s)...
+Hash of data verified.
+Compressed 952912 bytes to 554921...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001d820... (5 %)
+Writing at 0x00027062... (8 %)
+Writing at 0x0002bed4... (11 %)
+Writing at 0x000340bb... (14 %)
+Writing at 0x0003b597... (17 %)
+Writing at 0x00043115... (20 %)
+Writing at 0x0004a951... (23 %)
+Writing at 0x000519ac... (26 %)
+Writing at 0x00058ae2... (29 %)
+Writing at 0x0005efc2... (32 %)
+Writing at 0x00065a15... (35 %)
+Writing at 0x0006c502... (38 %)
+Writing at 0x00072819... (41 %)
+Writing at 0x00078d5b... (44 %)
+Writing at 0x0007f228... (47 %)
+Writing at 0x00084d5d... (50 %)
+Writing at 0x0008ae33... (52 %)
+Writing at 0x00090ec4... (55 %)
+Writing at 0x000970a2... (58 %)
+Writing at 0x0009d262... (61 %)
+Writing at 0x000a3072... (64 %)
+Writing at 0x000a9920... (67 %)
+Writing at 0x000b0547... (70 %)
+Writing at 0x000b75db... (73 %)
+Writing at 0x000be325... (76 %)
+Writing at 0x000c553d... (79 %)
+Writing at 0x000cb738... (82 %)
+Writing at 0x000d1a44... (85 %)
+Writing at 0x000d7e20... (88 %)
+Writing at 0x000ddeb3... (91 %)
+Writing at 0x000e5039... (94 %)
+Writing at 0x000ebd9a... (97 %)
+Writing at 0x000f1797... (100 %)
+Wrote 952912 bytes (554921 compressed) at 0x00010000 in 7.0 seconds (effective 1082.0 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 195.7 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+t_WPAN/mqtt_ws/build" -P C:/Espressif/frameworks/esp-idf-v5.2.2/components/esptool_py/run_serial_tool.cmake"
