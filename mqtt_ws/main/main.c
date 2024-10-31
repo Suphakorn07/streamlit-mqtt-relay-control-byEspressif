@@ -23,7 +23,6 @@
 #include "mqtt_client.h"
 
 #include "driver/gpio.h"
-
 // Wi-Fi Configuration
 #define WIFI_SSID      "suphakorn"
 #define WIFI_PASS      "987654321"
@@ -130,7 +129,7 @@ static esp_err_t mqtt_event_handler_cb(esp_mqtt_event_handle_t event)
         ESP_LOGI(TAG, "MQTT connected successfully");
         // Subscribe to topic
         esp_mqtt_client_subscribe(client, MQTT_TOPIC_SUBSCRIBE, 0);
-        //esp_mqtt_client_publish(client, MQTT_TOPIC_PUBLISH, "ESP32 connected MQTT Broker", 0, 0, 0);
+ 
         break;
     case MQTT_EVENT_DISCONNECTED:
         ESP_LOGI(TAG, "MQTT disconnected");
